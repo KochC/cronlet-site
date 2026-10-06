@@ -1,0 +1,18 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Cronlet — Support</title><style>
+:root{color-scheme:dark}body{margin:0;font:17px/1.65 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;color:#ece8f6;background:linear-gradient(180deg,#221a4e,#0b0a1e);min-height:100vh}
+.wrap{max-width:720px;margin:0 auto;padding:64px 24px 96px}h1{font-size:34px;margin:0 0 4px}h2{font-size:20px;margin:32px 0 8px}a{color:#f0a04b}.muted{color:#b4acd0}
+.card{background:rgba(255,255,255,.06);border-radius:16px;padding:16px 20px;margin:16px 0}ol li,ul li{margin:4px 0}footer{margin-top:48px;color:#8d86a8;font-size:14px}.icon{width:96px;height:96px;border-radius:22px}</style></head><body><div class="wrap">
+<p class="muted"><a href="index.html">← Cronlet</a></p><h1>Support</h1>
+<div class="card"><p>Email <a href="mailto:feedback@koch.codes">feedback@koch.codes</a>. Please include your iPhone model and iOS version.</p></div>
+<h2>How does Cronlet run my shortcuts?</h2><p>iOS doesn't let apps start shortcuts directly. Cronlet sends a notification when a job is due, and <strong>one Shortcuts automation</strong> (not a new shortcut) reacts to it and runs the shortcut that is due. You set it up once; it works for all jobs.</p>
+<h2>Setting up the automation (once)</h2><ol>
+<li>Shortcuts app → <strong>Automation</strong> tab → <strong>+</strong>.</li>
+<li>Trigger: app notifications → choose <strong>Cronlet</strong> → <strong>Run Immediately</strong> → New Blank Automation.</li>
+<li>Add Cronlet's <strong>Get Due Shortcut</strong> (leave the field empty).</li>
+<li>Add <strong>Get My Shortcuts</strong>.</li>
+<li>Add <strong>Repeat with Each</strong> over the result of Get My Shortcuts.</li>
+<li>Inside the loop: <strong>If</strong> Repeat Item → Name → is → result of Get Due Shortcut.</li>
+<li>Inside the If: <strong>Run Shortcut</strong> → Repeat Item.</li></ol>
+<h2>Requirements</h2><p>Notification automations require iOS 27 or later. Without the automation, tap a Cronlet notification to run the shortcut.</p>
+<h2>The shortcut isn't found</h2><p>The job's shortcut name must match the name in the Shortcuts app exactly (spaces and capitalisation included).</p>
+<h2>Privacy</h2><p>Cronlet collects no data. See the <a href="privacy.html">Privacy Policy</a>.</p></div></body></html>
